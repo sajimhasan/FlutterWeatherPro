@@ -17,11 +17,13 @@ class _WeatherState extends State<Weather> {
       backgroundColor: Colors.black,
       extendBody: true,
       appBar: AppBar(
-       backgroundColor: Colors.white,
+       backgroundColor: Colors.transparent,
        elevation:0,
        systemOverlayStyle: SystemUiOverlayStyle(
-        statusBarBrightness: Brightness.dark
+        statusBarBrightness: Brightness.dark,
+        
        ),
+       
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -32,8 +34,8 @@ class _WeatherState extends State<Weather> {
               Align(
                 alignment: AlignmentDirectional(3, -0.3),
                 child: Container(
-                  height: 300,
-                  width: 300,
+                  height: 400,
+                  width: 400,
                   decoration: BoxDecoration(
                     color: Colors.deepPurpleAccent,
                     shape: BoxShape.circle,
@@ -44,8 +46,8 @@ class _WeatherState extends State<Weather> {
               Align(
                 alignment: AlignmentDirectional(-3, -0.3),
                 child: Container(
-                  height: 300,
-                  width: 300,
+                  height: 400,
+                  width: 400,
                   decoration: BoxDecoration(
                     color: Colors.deepPurpleAccent,
                     shape: BoxShape.circle,
@@ -77,7 +79,7 @@ class _WeatherState extends State<Weather> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('📍Aix-en-Provence',
+                      Text('📍Balla-Kalihati-Tangail',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.white
@@ -90,21 +92,148 @@ class _WeatherState extends State<Weather> {
                         color: Colors.white
                       ),
                       ),
+                      SizedBox(height: 10,),
                       Center(
-                        child: Image.asset("images/1.png")
-                        )
+                        child: Container(
+                          height: 300,
+                          width: 300,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10)
+                          ),
+                         
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: Image.asset("images/2.png",
+                            fit: BoxFit.cover,
+                            
+                            ),
+                          ),
+                          
+                      ),
+                      
                       
 
+                   ),
+                   SizedBox(height: 10,),
+                   Center(child: Text('13°C',
+                   style: TextStyle(
+                    fontSize: 35,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white
+                   ),)),
+                  //  SizedBox(height: 5,),
+                   Center(
+                    child: Text('THONDERSTORM',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold
+                    ),
+                    )
+                    ),
+                    Center(child: Text('Friday 27 . 09:23',style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white70
+                    ),)
+                    ),
+                    Row(
+                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Image.asset("images/3.png",
+                        scale: 4,) ,
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Sunset',style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white
+                            ),),
+                            Text('05:17',style: TextStyle(
+                              color: Colors.white
+                            ),)
+                          ],
+                        )                 
+                      ],
+                    ),SizedBox(height: 10,),
+                  
+                      Row(
+                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Image.asset("images/6.png",
+                        scale: 4,) ,
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Sunrise',style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white
+                            ),),
+                            Text('05:17',style: TextStyle(
+                              color: Colors.white
+                            ),)
+                          ],
+                        )                 
+                      ],
+                    ), SizedBox(height: 10,),
+                    Row(
+                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Image.asset("images/5.png",
+                        scale: 4,) ,
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Low Temperature',style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white
+                            ),),
+                            Text('7°C',style: TextStyle(
+                              color: Colors.white
+                            ),)
+                          ],
+                        )                 
+                      ],
+                    ),SizedBox(height: 10,),
+                    Row(
+                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Image.asset("images/4.png",
+                        scale: 4,) ,
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('High Temperature',style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white
+                            ),),
+                            Text('35°C',style: TextStyle(
+                              color: Colors.white
+                            ),)
+                          ],
+                        )                 
+                      ],
+                    )
+
+
+
+                    
                     ],
                   ),
-                 ),
-                
+                  
+                  
+                 ),   
             ],
           ),
         ),
       ),
-     
-      
     );
   }
 }
