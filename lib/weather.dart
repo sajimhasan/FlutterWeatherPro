@@ -103,7 +103,8 @@ class _WeatherState extends State<Weather> {
                          
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(10),
-                            child: Image.asset("images/2.png",
+                            child: Image.asset("images/7.png",
+                            
                             fit: BoxFit.cover,
                             
                             ),
@@ -114,7 +115,7 @@ class _WeatherState extends State<Weather> {
                       
 
                    ),
-                   SizedBox(height: 10,),
+                   
                    Center(child: Text('13°C',
                    style: TextStyle(
                     fontSize: 35,
