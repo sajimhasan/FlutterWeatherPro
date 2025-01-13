@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_app_01/weatherstate/weatherstate.dart';
 
 class Weather extends StatefulWidget {
   const Weather({super.key});
@@ -103,7 +104,7 @@ class _WeatherState extends State<Weather> {
                          
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(10),
-                            child: Image.asset("images/7.png",
+                            child: Image.asset("images/8.png",
                             
                             fit: BoxFit.cover,
                             
@@ -116,7 +117,7 @@ class _WeatherState extends State<Weather> {
 
                    ),
                    
-                   Center(child: Text('13°C',
+                   Center(child: Text('23°C',
                    style: TextStyle(
                     fontSize: 35,
                     fontWeight: FontWeight.bold,
@@ -132,7 +133,7 @@ class _WeatherState extends State<Weather> {
                     ),
                     )
                     ),
-                    Center(child: Text('Friday 27 . 09:23',style: TextStyle(
+                    Center(child: RealTimeClock(textStyle:  TextStyle(
                       fontSize: 20,
                       color: Colors.white70
                     ),)
@@ -151,7 +152,7 @@ class _WeatherState extends State<Weather> {
                               fontWeight: FontWeight.bold,
                               color: Colors.white
                             ),),
-                            Text('05:17',style: TextStyle(
+                            Text('5:29 PM',style: TextStyle(
                               color: Colors.white
                             ),)
                           ],
@@ -173,7 +174,7 @@ class _WeatherState extends State<Weather> {
                               fontWeight: FontWeight.bold,
                               color: Colors.white
                             ),),
-                            Text('05:17',style: TextStyle(
+                            Text('6:45 AM',style: TextStyle(
                               color: Colors.white
                             ),)
                           ],
@@ -194,7 +195,7 @@ class _WeatherState extends State<Weather> {
                               fontWeight: FontWeight.bold,
                               color: Colors.white
                             ),),
-                            Text('7°C',style: TextStyle(
+                            Text('18°C',style: TextStyle(
                               color: Colors.white
                             ),)
                           ],
@@ -215,7 +216,7 @@ class _WeatherState extends State<Weather> {
                               fontWeight: FontWeight.bold,
                               color: Colors.white
                             ),),
-                            Text('35°C',style: TextStyle(
+                            Text('21°C',style: TextStyle(
                               color: Colors.white
                             ),)
                           ],
