@@ -1,8 +1,9 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:flutter_app_01/const.dart';
 import 'package:flutter_app_01/weatherstate/weatherstate.dart';
+import 'package:weather/weather.dart';
 
 class Weather extends StatefulWidget {
   const Weather({super.key});
@@ -12,20 +13,26 @@ class Weather extends StatefulWidget {
 }
 
 class _WeatherState extends State<Weather> {
+
+final WeatherFactory _weatherFactory = WeatherFactory(OPENWEATHER_API_KEY);
+Weather? _weather; 
+
+@override
+void initState() {
+  super.initState();
+
+  _weatherFactory.currentWeatherByCityName("Tangail").then((w) {
+    setState(() {
+      _weather = w as Weather;
+    });
+  });
+}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
       extendBody: true,
-      appBar: AppBar(
-       backgroundColor: Colors.transparent,
-       elevation:0,
-       systemOverlayStyle: SystemUiOverlayStyle(
-        statusBarBrightness: Brightness.dark,
-        
-       ),
-       
-      ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: SizedBox(
@@ -40,7 +47,7 @@ class _WeatherState extends State<Weather> {
                   decoration: BoxDecoration(
                     color: Colors.deepPurpleAccent,
                     shape: BoxShape.circle,
-
+    
                   ),
                 ),
               ),
@@ -52,7 +59,7 @@ class _WeatherState extends State<Weather> {
                   decoration: BoxDecoration(
                     color: Colors.deepPurpleAccent,
                     shape: BoxShape.circle,
-
+    
                   ),
                 ),
               ),
@@ -64,7 +71,7 @@ class _WeatherState extends State<Weather> {
                   decoration: BoxDecoration(
                     color: Colors.orange,
                     shape: BoxShape.rectangle,
-
+    
                   ),
                 ),
               ),
@@ -80,6 +87,7 @@ class _WeatherState extends State<Weather> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      SizedBox(height: 60,),
                       Text('📍Balla-Kalihati-Tangail',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
@@ -114,7 +122,7 @@ class _WeatherState extends State<Weather> {
                       ),
                       
                       
-
+    
                    ),
                    
                    Center(child: Text('23°C',
@@ -133,7 +141,7 @@ class _WeatherState extends State<Weather> {
                     ),
                     )
                     ),
-                    Center(child: RealTimeClock(textStyle:  TextStyle(
+                    Center(child: Text("200",style:   TextStyle(
                       fontSize: 20,
                       color: Colors.white70
                     ),)
@@ -223,9 +231,9 @@ class _WeatherState extends State<Weather> {
                         )                 
                       ],
                     )
-
-
-
+    
+    
+    
                     
                     ],
                   ),
